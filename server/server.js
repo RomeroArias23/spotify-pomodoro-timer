@@ -16,5 +16,9 @@ app.post('/login', (req, res) => {
             refreshToken: data.body.refresh_token,
             expiresIn: data.body.expires_in
         })
+    }).catch(() => {
+        res.sendStatus(400)
     })
 });
+
+app.listen(3001);
